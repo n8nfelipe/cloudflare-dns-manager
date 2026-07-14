@@ -1,0 +1,18 @@
+name: basic-static-site
+description: Basic setup for a static site behind Cloudflare proxy
+records:
+  - type: A
+    name: "@"
+    content: "192.0.2.1"
+    ttl: 1
+    proxied: true
+  - type: AAAA
+    name: "@"
+    content: "2001:db8::1"
+    ttl: 1
+    proxied: true
+  - type: CNAME
+    name: www
+    content: "target.cloudflare.net."
+    ttl: 1
+    proxied: true

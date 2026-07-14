@@ -1,0 +1,15 @@
+name: email-setup
+description: Standard email configuration with MX and SPF/TXT records
+records:
+  - type: MX
+    name: "@"
+    content: "10 mail.example.com."
+    ttl: 3600
+  - type: TXT
+    name: "@"
+    content: "v=spf1 include:_spf.example.com ~all"
+    ttl: 3600
+  - type: CNAME
+    name: mail
+    content: "mailhost.example.com."
+    ttl: 3600
